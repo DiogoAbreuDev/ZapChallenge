@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Platform } from "react-native";
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import { moderateScale as ms } from "react-native-size-matters"; 
 import Colors from "../../constants/colors";
@@ -7,7 +7,7 @@ export default styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: "center",
-        marginTop: getStatusBarHeight(),
+        marginTop: Platform.OS == "ios" ? getStatusBarHeight() : 0,
         backgroundColor: Colors.dirtyWhite
     },
     headerContainer: {
@@ -16,7 +16,7 @@ export default styles = StyleSheet.create({
     },
     backButtonContainer: {
         position: "absolute",
-        top: ms(12) + getStatusBarHeight(),
+        top: ms(12) + (Platform.OS == "ios" ? getStatusBarHeight() : 0),
         left: ms(12),
         zIndex: 1
     },
@@ -49,7 +49,7 @@ export default styles = StyleSheet.create({
         overflow: "hidden"
     },
     innerContainer: {
-        marginTop: getStatusBarHeight()
+        marginTop: Platform.OS == "ios" ? getStatusBarHeight() : 0,
     },
     nameText: {
         color: "white",

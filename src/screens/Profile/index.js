@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, Platform, Image, TouchableOpacity, ScrollView } from 'react-native';
 import Styles from "./styles";
-import Colors from "./../../constants/colors";
 import Strings from "../../constants/strings";
 
 export default class Profile extends Component {

@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import { Text, View, TextInput, Image, RefreshControl, Keyboard, TouchableWithoutFeedback, TouchableOpacity, FlatList, Alert } from 'react-native';
+import { Text, View, TextInput, Image, Keyboard, TouchableWithoutFeedback, TouchableOpacity, FlatList, Alert } from 'react-native';
 import Styles from "./styles";
-import Colors from "./../../constants/colors";
 import axios from "axios";
 import { URL, ACCESS_TOKEN } from "../../network";
-import { connect } from 'react-redux';
-import { setFavorites } from "../../actions/SetFavorites";
 import Strings from '../../constants/strings';
 import UserList from "../../components/UserList";
 

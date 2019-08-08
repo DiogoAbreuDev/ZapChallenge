@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Platform } from "react-native";
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import { moderateScale as ms } from "react-native-size-matters"; 
 import Colors from "../../constants/colors";
@@ -7,7 +7,7 @@ export default styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: "center",
-        marginTop: getStatusBarHeight(),
+        marginTop: Platform.OS == "ios" ? getStatusBarHeight() : 0,
         backgroundColor: Colors.dirtyWhite,
     },
     headerContainer: {
@@ -23,7 +23,8 @@ export default styles = StyleSheet.create({
         textAlign: "center",
         paddingTop: ms(10),
         paddingBottom: ms(15),
-        fontSize: ms(14)
+        fontSize: ms(14),
+        marginLeft: -ms(20)
     },
     searchContainer: {
         flexDirection: "row",
@@ -41,7 +42,9 @@ export default styles = StyleSheet.create({
         textAlign: "center",
         fontWeight: "bold",
         color: "white",
-        borderRadius: ms(4)
+        borderRadius: ms(4),
+        margin: 0,
+        padding: 0,
     },
     filterIconContainer: {
         flex: 0.15,
